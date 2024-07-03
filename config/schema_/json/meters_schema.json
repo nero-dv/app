@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/Meter"
+    },
+    "definitions": {
+        "Meter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "eid": {
+                    "type": "integer"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "measurementType": {
+                    "type": "string"
+                },
+                "phaseMode": {
+                    "type": "string"
+                },
+                "phaseCount": {
+                    "type": "integer"
+                },
+                "meteringStatus": {
+                    "type": "string"
+                },
+                "statusFlags": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "eid",
+                "measurementType",
+                "meteringStatus",
+                "phaseCount",
+                "phaseMode",
+                "state",
+                "statusFlags"
+            ],
+            "title": "Meter"
+        }
+    }
+}

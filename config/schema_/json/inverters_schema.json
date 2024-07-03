@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/Inverter"
+    },
+    "definitions": {
+        "Inverter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "serialNumber": {
+                    "type": "string"
+                },
+                "lastReportDate": {
+                    "type": "integer"
+                },
+                "devType": {
+                    "type": "integer"
+                },
+                "lastReportWatts": {
+                    "type": "integer"
+                },
+                "maxReportWatts": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "devType",
+                "lastReportDate",
+                "lastReportWatts",
+                "maxReportWatts",
+                "serialNumber"
+            ],
+            "title": "Inverter"
+        }
+    }
+}

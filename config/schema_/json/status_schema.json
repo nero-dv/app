@@ -1,0 +1,214 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Status",
+    "definitions": {
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "connection": {
+                    "$ref": "#/definitions/Connection"
+                },
+                "meters": {
+                    "$ref": "#/definitions/Meters"
+                },
+                "tasks": {
+                    "$ref": "#/definitions/Tasks"
+                },
+                "counters": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                },
+                "dry_contacts": {
+                    "$ref": "#/definitions/DryContacts"
+                }
+            },
+            "required": [
+                "connection",
+                "counters",
+                "dry_contacts",
+                "meters",
+                "tasks"
+            ],
+            "title": "Status"
+        },
+        "Connection": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "mqtt_state": {
+                    "type": "string"
+                },
+                "prov_state": {
+                    "type": "string"
+                },
+                "auth_state": {
+                    "type": "string"
+                },
+                "sc_stream": {
+                    "type": "string"
+                },
+                "sc_debug": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "auth_state",
+                "mqtt_state",
+                "prov_state",
+                "sc_debug",
+                "sc_stream"
+            ],
+            "title": "Connection"
+        },
+        "DryContacts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "": {
+                    "$ref": "#/definitions/Empty"
+                }
+            },
+            "required": [
+                ""
+            ],
+            "title": "DryContacts"
+        },
+        "Empty": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "dry_contact_id": {
+                    "type": "string"
+                },
+                "dry_contact_type": {
+                    "type": "string"
+                },
+                "dry_contact_load_name": {
+                    "type": "string"
+                },
+                "dry_contact_status": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "dry_contact_id",
+                "dry_contact_load_name",
+                "dry_contact_status",
+                "dry_contact_type"
+            ],
+            "title": "Empty"
+        },
+        "Meters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "last_update": {
+                    "type": "integer"
+                },
+                "soc": {
+                    "type": "integer"
+                },
+                "main_relay_state": {
+                    "type": "integer"
+                },
+                "gen_relay_state": {
+                    "type": "integer"
+                },
+                "backup_bat_mode": {
+                    "type": "integer"
+                },
+                "backup_soc": {
+                    "type": "integer"
+                },
+                "is_split_phase": {
+                    "type": "integer"
+                },
+                "phase_count": {
+                    "type": "integer"
+                },
+                "enc_agg_soc": {
+                    "type": "integer"
+                },
+                "enc_agg_energy": {
+                    "type": "integer"
+                },
+                "acb_agg_soc": {
+                    "type": "integer"
+                },
+                "acb_agg_energy": {
+                    "type": "integer"
+                },
+                "pv": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                },
+                "storage": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                },
+                "grid": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                },
+                "load": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                },
+                "generator": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "required": [
+                "acb_agg_energy",
+                "acb_agg_soc",
+                "backup_bat_mode",
+                "backup_soc",
+                "enc_agg_energy",
+                "enc_agg_soc",
+                "gen_relay_state",
+                "generator",
+                "grid",
+                "is_split_phase",
+                "last_update",
+                "load",
+                "main_relay_state",
+                "phase_count",
+                "pv",
+                "soc",
+                "storage"
+            ],
+            "title": "Meters"
+        },
+        "Tasks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "task_id": {
+                    "type": "integer"
+                },
+                "timestamp": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "task_id",
+                "timestamp"
+            ],
+            "title": "Tasks"
+        }
+    }
+}

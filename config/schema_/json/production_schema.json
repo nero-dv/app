@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Production",
+    "definitions": {
+        "Production": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "wattHoursToday": {
+                    "type": "integer"
+                },
+                "wattHoursSevenDays": {
+                    "type": "integer"
+                },
+                "wattHoursLifetime": {
+                    "type": "integer"
+                },
+                "wattsNow": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "wattHoursLifetime",
+                "wattHoursSevenDays",
+                "wattHoursToday",
+                "wattsNow"
+            ],
+            "title": "Production"
+        }
+    }
+}

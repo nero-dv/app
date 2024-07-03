@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/Reading"
+    },
+    "definitions": {
+        "Reading": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "eid": {
+                    "type": "integer"
+                },
+                "timestamp": {
+                    "type": "integer"
+                },
+                "actEnergyDlvd": {
+                    "type": "number"
+                },
+                "actEnergyRcvd": {
+                    "type": "number"
+                },
+                "apparentEnergy": {
+                    "type": "number"
+                },
+                "reactEnergyLagg": {
+                    "type": "number"
+                },
+                "reactEnergyLead": {
+                    "type": "number"
+                },
+                "instantaneousDemand": {
+                    "type": "number"
+                },
+                "activePower": {
+                    "type": "number"
+                },
+                "apparentPower": {
+                    "type": "number"
+                },
+                "reactivePower": {
+                    "type": "number"
+                },
+                "pwrFactor": {
+                    "type": "number"
+                },
+                "voltage": {
+                    "type": "number"
+                },
+                "current": {
+                    "type": "number"
+                },
+                "freq": {
+                    "type": "integer"
+                },
+                "channels": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Reading"
+                    }
+                }
+            },
+            "required": [
+                "actEnergyDlvd",
+                "actEnergyRcvd",
+                "activePower",
+                "apparentEnergy",
+                "apparentPower",
+                "current",
+                "eid",
+                "freq",
+                "instantaneousDemand",
+                "pwrFactor",
+                "reactEnergyLagg",
+                "reactEnergyLead",
+                "reactivePower",
+                "timestamp",
+                "voltage"
+            ],
+            "title": "Reading"
+        }
+    }
+}

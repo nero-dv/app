@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/ConsumptionElement"
+    },
+    "definitions": {
+        "ConsumptionElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "createdAt": {
+                    "type": "integer"
+                },
+                "reportType": {
+                    "type": "string"
+                },
+                "cumulative": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "number"
+                    }
+                },
+                "lines": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "number"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "createdAt",
+                "cumulative",
+                "lines",
+                "reportType"
+            ],
+            "title": "ConsumptionElement"
+        }
+    }
+}
